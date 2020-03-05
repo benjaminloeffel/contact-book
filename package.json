@@ -1,0 +1,25 @@
+{
+  "name": "contact-book",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/benjaminloeffel/contact-book.git"
+  },
+  "author": "Benjamin Löffel",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/benjaminloeffel/contact-book/issues"
+  },
+  "homepage": "https://github.com/benjaminloeffel/contact-book#readme",
+  "dependencies": {
+    "next": "9.2.2",
+    "react": "16.13.0",
+    "react-dom": "16.13.0"
+  }
+}
