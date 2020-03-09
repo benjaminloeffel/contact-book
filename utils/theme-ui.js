@@ -24,7 +24,13 @@ export default {
       border: "2px solid",
       borderColor: "primary",
       padding: "16px",
-      borderRadius: "5px"
+      borderRadius: "5px",
+      textAlign: "center"
+    }
+  },
+  images: {
+    avatar: {
+      borderRadius: "50%"
     }
   },
   styles: {
