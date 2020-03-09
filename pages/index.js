@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
-
 import fetch from "isomorphic-unfetch";
+import { Box, Input } from "theme-ui";
 import Layout from "../components/Layout";
 import CardList from "../components/CardList";
 
@@ -21,24 +21,30 @@ const Home = ({ users }) => {
     // Sort results by name ASC
     results.sort((a, b) => a.name.first.localeCompare(b.name.first));
 
+    console.log(results);
+
     return setSearchResults(results);
   }, [searchTerm]);
 
   return (
     <Layout>
-      <input
-        type="text"
-        placeholder="Search Contact"
-        onChange={handleSearchChange}
-        value={searchTerm}
-      />
-      <CardList users={searchResults} />
+      <Box p={2}>
+        <Input
+          type="text"
+          placeholder="Search Contact"
+          onChange={handleSearchChange}
+          value={searchTerm}
+        />
+      </Box>
+      <Box p={2}>
+        <CardList users={searchResults} />
+      </Box>
     </Layout>
   );
 };
 
 Home.getInitialProps = async () => {
-  const response = await fetch("https://randomuser.me/api/?results=50");
+  const response = await fetch("https://randomuser.me/api/?results=5");
   const data = await response.json();
 
   return {

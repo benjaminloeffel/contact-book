@@ -19,6 +19,10 @@ export default {
       'system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif',
     heading: "inherit"
   },
+  button: {
+    color: "text",
+    background: "background"
+  },
   cards: {
     primary: {
       border: "2px solid",
@@ -31,6 +35,13 @@ export default {
   images: {
     avatar: {
       borderRadius: "50%"
+    }
+  },
+  forms: {
+    input: {
+      "&:focus": {
+        outline: "2px solid #07c"
+      }
     }
   },
   styles: {
