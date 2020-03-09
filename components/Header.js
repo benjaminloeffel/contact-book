@@ -1,15 +1,13 @@
 import React from "react";
-import { useColorMode } from "theme-ui";
+import { Styled } from "theme-ui";
+import ThemeModeButton from "./ThemeModeButton";
 
 export default function Header() {
-  const [colorMode, setColorMode] = useColorMode();
   return (
     <header>
-      <button
-        onClick={() => setColorMode(colorMode === "light" ? "dark" : "light")}
-      >
-        Toggle {colorMode === "light" ? "Dark" : "Light"}
-      </button>
+      <Styled.h1>My Contacts</Styled.h1>
+      <Styled.p>Quickly search through the contact list</Styled.p>
+      <ThemeModeButton />
     </header>
   );
 }
