@@ -22,7 +22,6 @@ class MyApp extends App {
     const { Component, pageProps } = this.props;
     return (
       <ThemeProvider theme={theme}>
-        <Header />
         <Styled.root>
           <Component {...pageProps} />
         </Styled.root>
