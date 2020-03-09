@@ -19,6 +19,14 @@ export default {
       'system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif',
     heading: "inherit"
   },
+  cards: {
+    primary: {
+      border: "2px solid",
+      borderColor: "primary",
+      padding: "16px",
+      borderRadius: "5px"
+    }
+  },
   styles: {
     root: {
       fontFamily: "body",

@@ -1,18 +1,15 @@
-import Link from "next/link";
+import { Grid } from "theme-ui";
+import Card from "./Card";
 
 const CardList = ({ users }) => {
   return (
-    <ul>
+    <Grid gap={2} width={[128, null, 192]}>
       {users.map(user => {
-        return (
-          <li key={user.id}>
-            <Link href={`/users/${user.id}`}>
-              <a>{user.name}</a>
-            </Link>
-          </li>
-        );
+        {
+          return <Card key={user.login.uuid} {...user} />;
+        }
       })}
-    </ul>
+    </Grid>
   );
 };
 

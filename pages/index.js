@@ -14,7 +14,8 @@ const Home = ({ users }) => {
 
   useEffect(() => {
     const results = users.filter(user => {
-      return user.name.toLowerCase().includes(searchTerm.toLowerCase());
+      const fullName = user.name.first + " " + user.name.last;
+      return fullName.toLocaleLowerCase().includes(searchTerm.toLowerCase());
     });
 
     return setSearchResults(results);
@@ -34,11 +35,11 @@ const Home = ({ users }) => {
 };
 
 Home.getInitialProps = async () => {
-  const response = await fetch("https://jsonplaceholder.typicode.com/users");
+  const response = await fetch("https://randomuser.me/api/?results=10");
   const data = await response.json();
 
   return {
-    users: data
+    users: data.results
   };
 };
 
