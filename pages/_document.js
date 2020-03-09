@@ -1,27 +1,25 @@
-import Document, { Head, Main, NextScript } from "next/document";
-import { ServerStyleSheet } from "styled-components";
+import React from "react";
+import Document, { Html, Head, Main, NextScript } from "next/document";
+import { InitializeColorMode } from "theme-ui";
 
-export default class MyDocument extends Document {
-  static getInitialProps({ renderPage }) {
-    const sheet = new ServerStyleSheet();
-    const page = renderPage(App => props =>
-      sheet.collectStyles(<App {...props} />)
-    );
-
-    const styleTags = sheet.getStyleElement();
-
-    return { ...page, styleTags };
+class MyDocument extends Document {
+  static async getInitialProps(ctx) {
+    const initialProps = await Document.getInitialProps(ctx);
+    return { ...initialProps };
   }
 
   render() {
     return (
-      <html>
-        <Head>{this.props.styleTags}</Head>
+      <Html>
+        <Head />
         <body>
+          <InitializeColorMode />
           <Main />
           <NextScript />
         </body>
-      </html>
+      </Html>
     );
   }
 }
+
+export default MyDocument;

@@ -18,13 +18,14 @@
   },
   "homepage": "https://github.com/benjaminloeffel/contact-book#readme",
   "dependencies": {
+    "@emotion/core": "^10.0.28",
+    "@mdx-js/loader": "^1.5.7",
+    "@next/mdx": "^9.2.2",
     "isomorphic-unfetch": "^3.0.0",
     "next": "9.2.2",
     "react": "16.13.0",
     "react-dom": "16.13.0",
-    "styled-components": "^5.0.1"
+    "theme-ui": "^0.3.1"
   },
-  "devDependencies": {
-    "babel-plugin-styled-components": "^1.10.7"
-  }
+  "devDependencies": {}
 }
