@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Card as StyledCard, Image, Text } from "theme-ui";
+import { Styled, Card as StyledCard, Image, Text } from "theme-ui";
 
 const Card = ({ picture, login, name, dob, email }) => {
   const date = new Date(dob.date.toString());
@@ -10,13 +10,13 @@ const Card = ({ picture, login, name, dob, email }) => {
   });
 
   return (
-    <StyledCard key={login.uuid}>
+    <StyledCard key={login.uuid} bg="text">
       <Image src={picture.large} variant="avatar" />
-      <Text>
+      <Text color="background">
         <Link href={`/users/${login.uuid}`}>
-          <a>
+          <Styled.a>
             {name.title}. {name.first} {name.last}
-          </a>
+          </Styled.a>
         </Link>
         <p>{formattedDate}</p>
         <p>{email}</p>

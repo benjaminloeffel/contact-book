@@ -7,10 +7,10 @@ export default {
     secondary: "#609",
     modes: {
       dark: {
-        text: "#fff",
-        background: "#222",
-        primary: "#0cf",
-        secondary: "#90c"
+        text: "#a7a9be",
+        background: "#0f0e17",
+        primary: "#ff8906",
+        secondary: "#f25f4c"
       }
     }
   },
@@ -26,7 +26,7 @@ export default {
   cards: {
     primary: {
       border: "2px solid",
-      borderColor: "primary",
+      borderColor: "secondary",
       padding: "16px",
       borderRadius: "5px",
       textAlign: "center"
