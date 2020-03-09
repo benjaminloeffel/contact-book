@@ -18,6 +18,9 @@ const Home = ({ users }) => {
       return fullName.toLocaleLowerCase().includes(searchTerm.toLowerCase());
     });
 
+    // Sort results by name ASC
+    results.sort((a, b) => a.name.first.localeCompare(b.name.first));
+
     return setSearchResults(results);
   }, [searchTerm]);
 
@@ -35,7 +38,7 @@ const Home = ({ users }) => {
 };
 
 Home.getInitialProps = async () => {
-  const response = await fetch("https://randomuser.me/api/?results=10");
+  const response = await fetch("https://randomuser.me/api/?results=50");
   const data = await response.json();
 
   return {
