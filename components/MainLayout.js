@@ -10,6 +10,7 @@ const Layout = ({ children }) => (
         content="initial-scale=1.0, width=device-width"
         key="viewport"
       />
+      <meta name="Description" content="Quickly search through the contacts." />
     </Head>
     <Header />
     <main>{children}</main>
