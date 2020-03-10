@@ -1,8 +1,9 @@
 import { useState, useEffect } from "react";
 import fetch from "isomorphic-unfetch";
-import { Box, Input } from "theme-ui";
+import { Box, Input, Label, Flex } from "theme-ui";
 import Layout from "../components/Layout";
 import CardList from "../components/CardList";
+import SearchForm from "../components/SearchForm";
 
 const Home = ({ users }) => {
   const [searchTerm, setSearchTerm] = useState("");
@@ -20,7 +21,6 @@ const Home = ({ users }) => {
 
     // Sort results by name ASC
     results.sort((a, b) => a.name.first.localeCompare(b.name.first));
-
     console.log(results);
 
     return setSearchResults(results);
@@ -28,14 +28,12 @@ const Home = ({ users }) => {
 
   return (
     <Layout>
-      <Box p={2}>
-        <Input
-          type="text"
-          placeholder="Search Contact"
-          onChange={handleSearchChange}
-          value={searchTerm}
+      <Flex sx={{ alignItems: "center", justifyContent: "center" }}>
+        <SearchForm
+          onSearchChange={handleSearchChange}
+          searchTerm={searchTerm}
         />
-      </Box>
+      </Flex>
       <Box p={2}>
         <CardList users={searchResults} />
       </Box>

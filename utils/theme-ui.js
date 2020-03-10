@@ -39,6 +39,7 @@ export default {
   },
   forms: {
     input: {
+      width: "300px",
       "&:focus": {
         outline: "2px solid #07c"
       }

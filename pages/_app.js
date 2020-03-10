@@ -1,8 +1,6 @@
 import React from "react";
 import App from "next/app";
 import { ThemeProvider, Styled } from "theme-ui";
-
-import Header from "../components/Header";
 import theme from "../utils/theme-ui";
 
 class MyApp extends App {

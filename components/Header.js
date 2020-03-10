@@ -1,6 +1,6 @@
 import React from "react";
 /** @jsx jsx */
-import { Styled, jsx, Box } from "theme-ui";
+import { jsx, Styled, Box } from "theme-ui";
 import ThemeModeButton from "./ThemeModeButton";
 
 export default function Header() {
