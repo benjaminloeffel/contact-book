@@ -3,7 +3,7 @@ import Card from "./Card";
 
 const CardList = ({ users }) => {
   return (
-    <Grid gap={2} width={[128, null, 192]}>
+    <Grid gap={3} width={320}>
       {users.map(user => (
         <Card key={user.login.uuid} {...user} />
       ))}

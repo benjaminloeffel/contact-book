@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import fetch from "isomorphic-unfetch";
 import { Box, Flex } from "theme-ui";
 import Layout from "../components/MainLayout";
+import StatusBar from "../components/StatusBar";
 import CardList from "../components/CardList";
 import SearchForm from "../components/SearchForm";
 
@@ -28,13 +29,20 @@ const Home = ({ users }) => {
 
   return (
     <Layout>
-      <Flex sx={{ alignItems: "center", justifyContent: "center" }}>
+      <Flex
+        sx={{
+          alignItems: "center",
+          justifyContent: "center",
+          flexDirection: "column"
+        }}
+      >
         <SearchForm
           onSearchChange={handleSearchChange}
           searchTerm={searchTerm}
         />
+        <StatusBar searchTerm={searchTerm} results={searchResults.length} />
       </Flex>
-      <Box p={2}>
+      <Box p={3}>
         <CardList users={searchResults} />
       </Box>
     </Layout>
@@ -42,7 +50,7 @@ const Home = ({ users }) => {
 };
 
 Home.getInitialProps = async () => {
-  const response = await fetch("https://randomuser.me/api/?results=10");
+  const response = await fetch("https://randomuser.me/api/?results=50");
   const data = await response.json();
 
   return {
