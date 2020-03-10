@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import fetch from "isomorphic-unfetch";
 import { Box, Input, Label, Flex } from "theme-ui";
-import Layout from "../components/Layout";
+import Layout from "../components/MainLayout";
 import CardList from "../components/CardList";
 import SearchForm from "../components/SearchForm";
 
