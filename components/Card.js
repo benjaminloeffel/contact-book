@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { Styled, Card as StyledCard, Image, Text } from "theme-ui";
 
 const Card = ({ picture, login, name, dob, email }) => {
@@ -11,15 +10,17 @@ const Card = ({ picture, login, name, dob, email }) => {
 
   return (
     <StyledCard key={login.uuid} bg="text">
-      <Image src={picture.large} variant="avatar" />
+      <Image
+        src={picture.large}
+        variant="avatar"
+        alt={`Avatar of ${name.title} ${name.first} ${name.last}`}
+      />
       <Text color="background">
-        <Link href={`/users/${login.uuid}`}>
-          <Styled.a>
-            {name.title}. {name.first} {name.last}
-          </Styled.a>
-        </Link>
-        <p>{formattedDate}</p>
-        <p>{email}</p>
+        <Styled.p>
+          {name.title}. {name.first} {name.last}
+        </Styled.p>
+        <Styled.p>{formattedDate}</Styled.p>
+        <Styled.p>{email}</Styled.p>
       </Text>
     </StyledCard>
   );
