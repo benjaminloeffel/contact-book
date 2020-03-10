@@ -34,7 +34,7 @@ const Home = ({ users }) => {
           searchTerm={searchTerm}
         />
       </Flex>
-      <Box p={2}>
+      <Box p={3}>
         <CardList users={searchResults} />
       </Box>
     </Layout>
