@@ -40,7 +40,7 @@ const Home = ({ users }) => {
           onSearchChange={handleSearchChange}
           searchTerm={searchTerm}
         />
-        <StatusBar results={searchResults.length} />
+        <StatusBar searchTerm={searchTerm} results={searchResults.length} />
       </Flex>
       <Box p={3}>
         <CardList users={searchResults} />
@@ -50,7 +50,7 @@ const Home = ({ users }) => {
 };
 
 Home.getInitialProps = async () => {
-  const response = await fetch("https://randomuser.me/api/?results=10");
+  const response = await fetch("https://randomuser.me/api/?results=50");
   const data = await response.json();
 
   return {
