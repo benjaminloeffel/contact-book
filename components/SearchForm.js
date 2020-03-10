@@ -3,7 +3,7 @@ import { jsx, Box, Label, Input } from "theme-ui";
 
 const SearchForm = ({ onSearchChange, searchTerm }) => (
   <Box as="form" onSubmit={e => e.preventDefault()}>
-    <Label htmlFor="username">Search Contacts</Label>
+    <Label htmlFor="search">Search Contacts</Label>
     <Input
       type="text"
       placeholder="Enter the name of the contact"
