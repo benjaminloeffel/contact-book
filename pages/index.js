@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import fetch from "isomorphic-unfetch";
 import { Box, Flex } from "theme-ui";
 import Layout from "../components/MainLayout";
+import StatusBar from "../components/StatusBar";
 import CardList from "../components/CardList";
 import SearchForm from "../components/SearchForm";
 
@@ -28,11 +29,18 @@ const Home = ({ users }) => {
 
   return (
     <Layout>
-      <Flex sx={{ alignItems: "center", justifyContent: "center" }}>
+      <Flex
+        sx={{
+          alignItems: "center",
+          justifyContent: "center",
+          flexDirection: "column"
+        }}
+      >
         <SearchForm
           onSearchChange={handleSearchChange}
           searchTerm={searchTerm}
         />
+        <StatusBar results={searchResults.length} />
       </Flex>
       <Box p={3}>
         <CardList users={searchResults} />
