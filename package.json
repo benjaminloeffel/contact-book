@@ -16,7 +16,7 @@
   "bugs": {
     "url": "https://github.com/benjaminloeffel/contact-book/issues"
   },
-  "homepage": "https://github.com/benjaminloeffel/contact-book#readme",
+  "homepage": "https://contact-book.now.sh/",
   "dependencies": {
     "@emotion/core": "^10.0.28",
     "@mdx-js/loader": "^1.5.7",
